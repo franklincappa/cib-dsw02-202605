@@ -1,0 +1,292 @@
+{
+  "info": {
+    "_postman_id": "a7a34128-0e02-4478-8feb-c19e658eae94",
+    "name": "ventastech-catalogo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21176360",
+    "_collection_link": "https://go.postman.co/collection/21176360-a7a34128-0e02-4478-8feb-c19e658eae94?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "productos",
+      "item": [
+        {
+          "name": "listar-todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base-url}}/productos",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "productos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base-url}}/productos/activos",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "productos",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "por-id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base-url}}/productos/1",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "productos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"categoriaId\": 1,\r\n  \"marcaId\": 1,\r\n  \"codigoSku\": \"LAP-DELL-002\",\r\n  \"nombre\": \"Laptop Dell XPS 15\",\r\n  \"descripcion\": \"Intel Core i7 12va gen, 16GB RAM DDR5, 512GB NVMe SSD, pantalla OLED 4K\",\r\n  \"precio\": 4500.00,\r\n  \"activo\": true,\r\n  \"stockActual\": 8,\r\n  \"stockMinimo\": 2,\r\n  \"stockMaximo\": 30\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base-url}}/productos",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "productos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"categoriaId\": 1,\r\n  \"marcaId\": 1,\r\n  \"codigoSku\": \"LAP-DELL-001\",\r\n  \"nombre\": \"Laptop Dell Inspiron 15 3000\",\r\n  \"descripcion\": \"Intel Core i5 11va gen, 8GB RAM DDR4, 256GB SSD NVMe, pantalla FHD antirreflejo\",\r\n  \"precio\": 2350.00,\r\n  \"activo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base-url}}/productos/1",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "productos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "categorias",
+      "item": [
+        {
+          "name": "crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Impresoras y Escáneres\",\r\n  \"descripcion\": \"Equipos de impresión láser, inyección de tinta y escáneres\",\r\n  \"activo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base-url}}/categorias",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "categorias"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Laptops, Computadoras y Workstations\",\r\n  \"descripcion\": \"Equipos de cómputo portátiles, de escritorio y estaciones de trabajo profesionales\",\r\n  \"activo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base-url}}/categorias/1",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "categorias",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "marcas",
+      "item": [
+        {
+          "name": "crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Asus\",\r\n  \"descripcion\": \"Laptops, monitores y componentes de alto rendimiento\",\r\n  \"paisOrigen\": \"Taiwán\",\r\n  \"activo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base-url}}/marcas",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "marcas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actualizar",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Logitech\",\r\n  \"descripcion\": \"Periféricos, webcams, auriculares y accesorios para productividad y gaming\",\r\n  \"paisOrigen\": \"Suiza\",\r\n  \"activo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base-url}}/marcas/2",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "marcas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "listar-productos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/productos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "productos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base-url",
+      "value": ""
+    }
+  ]
+}
