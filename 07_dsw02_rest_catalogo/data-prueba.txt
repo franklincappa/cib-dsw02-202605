@@ -1,0 +1,173 @@
+
+CATEGORÍAS
+POST — Crear categoría
+POST http://localhost:8081/api/v1/categorias
+json{
+  "nombre": "Impresoras y Escáneres",
+  "descripcion": "Equipos de impresión láser, inyección de tinta y escáneres",
+  "activo": true
+}
+
+json{
+  "nombre": "Redes y Conectividad",
+  "descripcion": "Routers, switches, adaptadores de red y cables",
+  "activo": true
+}
+
+json{
+  "nombre": "Gaming",
+  "descripcion": "Periféricos y equipos especializados para videojuegos",
+  "activo": true
+}
+
+
+PUT — Actualizar categoría
+PUT http://localhost:8081/api/v1/categorias/1
+
+json{
+  "nombre": "Laptops, Computadoras y Workstations",
+  "descripcion": "Equipos de cómputo portátiles, de escritorio y estaciones de trabajo profesionales",
+  "activo": true
+}
+
+MARCAS
+POST — Crear marca
+POST http://localhost:8081/api/v1/marcas
+json{
+  "nombre": "Apple",
+  "descripcion": "Tecnología de consumo premium, MacBooks y accesorios",
+  "paisOrigen": "Estados Unidos",
+  "activo": true
+}
+
+json{
+  "nombre": "Asus",
+  "descripcion": "Laptops, monitores y componentes de alto rendimiento",
+  "paisOrigen": "Taiwán",
+  "activo": true
+}
+
+json{
+  "nombre": "Razer",
+  "descripcion": "Periféricos y laptops orientados al gaming",
+  "paisOrigen": "Estados Unidos",
+  "activo": true
+}
+
+json{
+  "nombre": "HP",
+  "descripcion": "Computadoras, impresoras y soluciones empresariales",
+  "paisOrigen": "Estados Unidos",
+  "activo": true
+}
+
+PUT — Actualizar marca
+PUT http://localhost:8081/api/v1/marcas/2
+json{
+  "nombre": "Logitech",
+  "descripcion": "Periféricos, webcams, auriculares y accesorios para productividad y gaming",
+  "paisOrigen": "Suiza",
+  "activo": true
+}
+
+PRODUCTOS
+POST — Crear producto
+POST http://localhost:8081/api/v1/productos
+json{
+  "categoriaId": 1,
+  "marcaId": 1,
+  "codigoSku": "LAP-DELL-002",
+  "nombre": "Laptop Dell XPS 15",
+  "descripcion": "Intel Core i7 12va gen, 16GB RAM DDR5, 512GB NVMe SSD, pantalla OLED 4K",
+  "precio": 4500.00,
+  "activo": true,
+  "stockActual": 8,
+  "stockMinimo": 2,
+  "stockMaximo": 30
+}
+
+json{
+  "categoriaId": 2,
+  "marcaId": 3,
+  "codigoSku": "TEC-RAZR-001",
+  "nombre": "Teclado Razer BlackWidow V4",
+  "descripcion": "Teclado mecánico gaming, switches Razer Yellow, retroiluminación Chroma RGB",
+  "precio": 520.00,
+  "activo": true,
+  "stockActual": 15,
+  "stockMinimo": 3,
+  "stockMaximo": 60
+}
+
+json{
+  "categoriaId": 3,
+  "marcaId": 4,
+  "codigoSku": "MON-LG27-001",
+  "nombre": "Monitor LG UltraGear 27\"",
+  "descripcion": "Panel IPS 2K QHD 165Hz, 1ms respuesta, compatible FreeSync y G-Sync",
+  "precio": 1200.00,
+  "activo": true,
+  "stockActual": 6,
+  "stockMinimo": 2,
+  "stockMaximo": 25
+}
+
+json{
+  "categoriaId": 4,
+  "marcaId": 2,
+  "codigoSku": "AUR-LOGI-001",
+  "nombre": "Auriculares Logitech G Pro X",
+  "descripcion": "Auriculares gaming inalámbricos, drivers PRO-G de 50mm, micrófono Blue VO!CE",
+  "precio": 480.00,
+  "activo": true,
+  "stockActual": 12,
+  "stockMinimo": 3,
+  "stockMaximo": 40
+}
+
+json{
+  "categoriaId": 5,
+  "marcaId": 6,
+  "codigoSku": "SSD-SAMS-002",
+  "nombre": "SSD Samsung T7 Shield 2TB",
+  "descripcion": "SSD externo portátil USB 3.2, lectura 1050MB/s, resistente a golpes y agua IP65",
+  "precio": 380.00,
+  "activo": true,
+  "stockActual": 20,
+  "stockMinimo": 5,
+  "stockMaximo": 80
+}
+
+json{
+  "categoriaId": 6,
+  "marcaId": 2,
+  "codigoSku": "CAM-LOGI-002",
+  "nombre": "Cámara Logitech StreamCam",
+  "descripcion": "Cámara Full HD 1080p 60fps, autoenfoque inteligente, conexión USB-C",
+  "precio": 290.00,
+  "activo": true,
+  "stockActual": 18,
+  "stockMinimo": 4,
+  "stockMaximo": 50
+}
+
+PUT — Actualizar producto
+PUT http://localhost:8081/api/v1/productos/1
+json{
+  "categoriaId": 1,
+  "marcaId": 1,
+  "codigoSku": "LAP-DELL-001",
+  "nombre": "Laptop Dell Inspiron 15 3000",
+  "descripcion": "Intel Core i5 11va gen, 8GB RAM DDR4, 256GB SSD NVMe, pantalla FHD antirreflejo",
+  "precio": 2350.00,
+  "activo": true
+}
+
+PATCH — Ajustar stock de inventario
+PATCH http://localhost:8081/api/v1/inventario/producto/1/ajustar?cantidad=10
+
+Entrada de stock — cantidad positiva suma, negativa resta.
+
+cantidad=10   → entrada de 10 unidades
+cantidad=-3   → salida de 3 unidades
+

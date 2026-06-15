@@ -5,7 +5,7 @@ export const options = {
   stages: [
     { duration: "2m", target: 10 },  // 10 usuarios por 2 minutos
     { duration: "1m", target: 20 },  // sube a 20 por 1 minuto
-    { duration: "1m", target: 50 },  // sube a 50 por 1 minuto
+    { duration: "1m", target: 50 },  // sube a 50 por 1 minuto (vu-virtual users)
     { duration: "10s", target: 0  }, // baja gradual al terminar
   ],
   thresholds: {

@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+
+  # MongoDB
+  mongodb:
+    image: mongo:7-jammy
+    container_name: ventastech-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: db_pedido
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - ventastech-net
+
+  # pedido-service
+  pedido-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ventastech-pedido
+    ports:
+      - "8082:8082"
+    environment:
+      APP_MONGODB_URI: mongodb://mongodb:27017
+      APP_MONGODB_DATABASE: db_pedido
+      SERVER_PORT: 8082
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - ventastech-net
+    restart: on-failure
+
+volumes:
+  mongodb_data:
+
+networks:
+  ventastech-net:
+    driver: bridge

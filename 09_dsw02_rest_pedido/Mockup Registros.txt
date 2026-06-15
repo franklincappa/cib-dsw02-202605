@@ -1,0 +1,357 @@
+Pedido 1 — Equipos de oficina (PENDIENTE)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-001",
+    "nombre": "Juan Pérez García",
+    "email": "juan.perez@empresa.com",
+    "telefono": "987654321",
+    "direccionEntrega": "Av. Javier Prado Este 1234, Piso 3",
+    "ciudad": "Lima",
+    "referencia": "Edificio azul, frente al parque"
+  },
+  "items": [
+    {
+      "productoId": 1,
+      "codigoSku": "LAP-DELL-001",
+      "nombreProducto": "Laptop Dell Inspiron 15",
+      "descripcionProducto": "Intel i5, 8GB RAM, 256GB SSD",
+      "precioUnitario": 2500.00,
+      "cantidad": 2
+    },
+    {
+      "productoId": 2,
+      "codigoSku": "MOU-LOGI-001",
+      "nombreProducto": "Mouse Logitech MX Master 3",
+      "descripcionProducto": "Mouse inalámbrico ergonómico",
+      "precioUnitario": 180.00,
+      "cantidad": 2
+    },
+    {
+      "productoId": 3,
+      "codigoSku": "TEC-HYPX-001",
+      "nombreProducto": "Teclado HyperX Alloy",
+      "descripcionProducto": "Teclado mecánico RGB switches rojos",
+      "precioUnitario": 350.00,
+      "cantidad": 2
+    }
+  ],
+  "notas": "Entregar en horario de oficina 9am-6pm. Factura a nombre de la empresa."
+}
+
+
+
+Pedido 2 — Setup gaming (CONFIRMADO)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-002",
+    "nombre": "María Rodríguez López",
+    "email": "maria.rodriguez@gmail.com",
+    "telefono": "976543210",
+    "direccionEntrega": "Jr. Las Flores 567, Dpto 4B",
+    "ciudad": "Lima",
+    "referencia": "Condominio Las Palmeras, portón verde"
+  },
+  "items": [
+    {
+      "productoId": 4,
+      "codigoSku": "MON-LG24-001",
+      "nombreProducto": "Monitor LG 24MK600",
+      "descripcionProducto": "IPS 24 pulgadas Full HD 75Hz",
+      "precioUnitario": 850.00,
+      "cantidad": 1
+    },
+    {
+      "productoId": 3,
+      "codigoSku": "TEC-HYPX-001",
+      "nombreProducto": "Teclado HyperX Alloy",
+      "descripcionProducto": "Teclado mecánico RGB switches rojos",
+      "precioUnitario": 350.00,
+      "cantidad": 1
+    },
+    {
+      "productoId": 2,
+      "codigoSku": "MOU-LOGI-001",
+      "nombreProducto": "Mouse Logitech MX Master 3",
+      "descripcionProducto": "Mouse inalámbrico ergonómico",
+      "precioUnitario": 180.00,
+      "cantidad": 1
+    },
+    {
+      "productoId": 5,
+      "codigoSku": "AUR-SONY-001",
+      "nombreProducto": "Auriculares Sony WH-1000XM5",
+      "descripcionProducto": "Cancelación de ruido activa",
+      "precioUnitario": 750.00,
+      "cantidad": 1
+    }
+  ],
+  "notas": "Regalo de cumpleaños, incluir empaque especial si es posible."
+}
+
+
+
+Pedido 3 — Almacenamiento y memoria (EN_PROCESO)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-003",
+    "nombre": "Carlos Mendoza Quispe",
+    "email": "carlos.mendoza@techcorp.pe",
+    "telefono": "965432109",
+    "direccionEntrega": "Av. República de Panamá 3456, Of. 201",
+    "ciudad": "Lima",
+    "referencia": "Edificio TechCorp, piso 2 preguntar por recepción"
+  },
+  "items": [
+    {
+      "productoId": 7,
+      "codigoSku": "SSD-SAMS-001",
+      "nombreProducto": "SSD Samsung 970 EVO 1TB",
+      "descripcionProducto": "NVMe M.2 lectura 3500MB/s",
+      "precioUnitario": 450.00,
+      "cantidad": 5
+    },
+    {
+      "productoId": 8,
+      "codigoSku": "RAM-CORS-001",
+      "nombreProducto": "RAM Corsair Vengeance 16GB",
+      "descripcionProducto": "DDR4 3200MHz kit 2x8GB",
+      "precioUnitario": 280.00,
+      "cantidad": 5
+    }
+  ],
+  "notas": "Compra corporativa para actualización de servidores. Requiere guía de remisión."
+}
+
+
+
+Pedido 4 — Accesorios varios (ENVIADO)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-004",
+    "nombre": "Ana Lucía Torres Vega",
+    "email": "ana.torres@hotmail.com",
+    "telefono": "954321098",
+    "direccionEntrega": "Calle Los Pinos 890",
+    "ciudad": "Arequipa",
+    "referencia": "Casa esquinera color beige, reja negra"
+  },
+  "items": [
+    {
+      "productoId": 9,
+      "codigoSku": "HUB-LOGI-001",
+      "nombreProducto": "Hub USB-C Logitech 7 en 1",
+      "descripcionProducto": "HDMI 4K USB 3.0 SD card carga 100W",
+      "precioUnitario": 150.00,
+      "cantidad": 1
+    },
+    {
+      "productoId": 6,
+      "codigoSku": "WEB-LOGI-001",
+      "nombreProducto": "Webcam Logitech C920",
+      "descripcionProducto": "Full HD 1080p micrófono estéreo",
+      "precioUnitario": 320.00,
+      "cantidad": 1
+    }
+  ],
+  "notas": "Trabajo remoto. Entregar en las mañanas antes de las 12pm."
+}
+
+
+
+Pedido 5 — Laptop premium (ENTREGADO)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-005",
+    "nombre": "Roberto Sánchez Flores",
+    "email": "roberto.sanchez@gmail.com",
+    "telefono": "943210987",
+    "direccionEntrega": "Av. Larco 1234, Miraflores",
+    "ciudad": "Lima",
+    "referencia": "Frente al parque Kennedy, edificio con letrero azul"
+  },
+  "items": [
+    {
+      "productoId": 1,
+      "codigoSku": "LAP-DELL-002",
+      "nombreProducto": "Laptop Dell XPS 15",
+      "descripcionProducto": "Intel Core i7 16GB RAM 512GB SSD OLED 4K",
+      "precioUnitario": 4500.00,
+      "cantidad": 1
+    },
+    {
+      "productoId": 10,
+      "codigoSku": "SOP-DELL-001",
+      "nombreProducto": "Laptop Stand Dell",
+      "descripcionProducto": "Soporte aluminio ajustable 10-17 pulgadas",
+      "precioUnitario": 90.00,
+      "cantidad": 1
+    }
+  ],
+  "notas": "Cliente premium. Llamar antes de entregar al 943210987."
+}
+
+
+
+Pedido 6 — Setup streaming (CANCELADO)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-006",
+    "nombre": "Luciana Castro Paredes",
+    "email": "luciana.castro@outlook.com",
+    "telefono": "932109876",
+    "direccionEntrega": "Jr. Cusco 456 Dpto 3A",
+    "ciudad": "Trujillo",
+    "referencia": "Edificio frente a la plaza, timbre 3A"
+  },
+  "items": [
+    {
+      "productoId": 6,
+      "codigoSku": "CAM-LOGI-002",
+      "nombreProducto": "Cámara Logitech StreamCam",
+      "descripcionProducto": "Full HD 1080p 60fps conexión USB-C",
+      "precioUnitario": 290.00,
+      "cantidad": 1
+    },
+    {
+      "productoId": 5,
+      "codigoSku": "AUR-LOGI-001",
+      "nombreProducto": "Auriculares Logitech G Pro X",
+      "descripcionProducto": "Gaming inalámbrico drivers PRO-G 50mm",
+      "precioUnitario": 480.00,
+      "cantidad": 1
+    }
+  ],
+  "notas": "Para canal de YouTube. Verificar stock antes de confirmar."
+}
+
+
+
+
+Pedido 7 — Equipamiento completo empresa (PENDIENTE)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-007",
+    "nombre": "Diego Vargas Huamán",
+    "email": "diego.vargas@corporacion.com",
+    "telefono": "921098765",
+    "direccionEntrega": "Av. El Sol 789 Piso 5",
+    "ciudad": "Cusco",
+    "referencia": "Corporación del Sol, recepción piso 5"
+  },
+  "items": [
+    {
+      "productoId": 1,
+      "codigoSku": "LAP-DELL-001",
+      "nombreProducto": "Laptop Dell Inspiron 15",
+      "descripcionProducto": "Intel i5 8GB RAM 256GB SSD",
+      "precioUnitario": 2500.00,
+      "cantidad": 10
+    },
+    {
+      "productoId": 4,
+      "codigoSku": "MON-LG24-001",
+      "nombreProducto": "Monitor LG 24MK600",
+      "descripcionProducto": "IPS 24 pulgadas Full HD 75Hz",
+      "precioUnitario": 850.00,
+      "cantidad": 10
+    },
+    {
+      "productoId": 2,
+      "codigoSku": "MOU-LOGI-001",
+      "nombreProducto": "Mouse Logitech MX Master 3",
+      "descripcionProducto": "Mouse inalámbrico ergonómico",
+      "precioUnitario": 180.00,
+      "cantidad": 10
+    },
+    {
+      "productoId": 3,
+      "codigoSku": "TEC-HYPX-001",
+      "nombreProducto": "Teclado HyperX Alloy",
+      "descripcionProducto": "Teclado mecánico RGB switches rojos",
+      "precioUnitario": 350.00,
+      "cantidad": 10
+    }
+  ],
+  "notas": "Licitación corporativa N°2026-045. Requiere factura y guía de remisión por cada equipo."
+}
+
+
+
+Pedido 8 — Audio profesional (CONFIRMADO)
+POST http://localhost:8082/api/v1/pedidos
+json{
+  "clienteInfo": {
+    "clienteId": "CLI-008",
+    "nombre": "Sofía Núñez Delgado",
+    "email": "sofia.nunez@estudio.pe",
+    "telefono": "910987654",
+    "direccionEntrega": "Calle Beethoven 321 Surco",
+    "ciudad": "Lima",
+    "referencia": "Estudio de grabación SND, portón negro grande"
+  },
+  "items": [
+    {
+      "productoId": 5,
+      "codigoSku": "AUR-SONY-001",
+      "nombreProducto": "Auriculares Sony WH-1000XM5",
+      "descripcionProducto": "Cancelación de ruido activa over-ear",
+      "precioUnitario": 750.00,
+      "cantidad": 3
+    },
+    {
+      "productoId": 5,
+      "codigoSku": "AUR-LOGI-001",
+      "nombreProducto": "Auriculares Logitech G Pro X",
+      "descripcionProducto": "Gaming inalámbrico drivers PRO-G 50mm",
+      "precioUnitario": 480.00,
+      "cantidad": 2
+    }
+  ],
+  "notas": "Estudio de grabación profesional. Coordinar entrega con el ingeniero de sonido."
+}
+
+
+
+Test de cambios de estado:
+-------------------------------------------------------------------
+
+Confirmar — PATCH /api/v1/pedidos/{id}/estado
+json{
+  "nuevoEstado": "CONFIRMADO",
+  "motivo": "Pago verificado mediante transferencia bancaria",
+  "usuarioAccion": "admin@ventastech.com"
+}
+
+
+En proceso — PATCH /api/v1/pedidos/{id}/estado
+json{
+  "nuevoEstado": "EN_PROCESO",
+  "motivo": "Pedido en preparación en almacén",
+  "usuarioAccion": "almacen@ventastech.com"
+}
+
+
+Enviado — PATCH /api/v1/pedidos/{id}/estado
+json{
+  "nuevoEstado": "ENVIADO",
+  "motivo": "Despachado con Olva Courier, guía N° OLV-2026-98765",
+  "usuarioAccion": "despacho@ventastech.com"
+}
+
+
+Entregado — PATCH /api/v1/pedidos/{id}/estado
+json{
+  "nuevoEstado": "ENTREGADO",
+  "motivo": "Entregado y firmado por el cliente",
+  "usuarioAccion": "courier@ventastech.com"
+}
+
+
+Cancelar — PATCH /api/v1/pedidos/{id}/cancelar?motivo=Cliente solicitó cancelación por cambio de presupuesto
